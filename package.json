@@ -1,0 +1,13 @@
+{
+  "name": "surface-talent-website",
+  "private": true,
+  "description": "Surface Talent marketing site + Cloudflare Pages Functions",
+  "scripts": {
+    "dev": "python3 -m http.server 8765",
+    "pages:dev": "npx wrangler pages dev . --port 8788",
+    "pages:deploy": "npx wrangler pages deploy . --project-name=surface-talent-website"
+  },
+  "devDependencies": {
+    "wrangler": "^4.120.0"
+  }
+}

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live roles — Surface Talent</title>
+<meta name="description" content="Live UK surface engineering and metal finishing vacancies. Permanent, contract and interim across process, quality, commercial and director-level roles.">
+<link rel="canonical" href="https://surfacetalent.co.uk/jobs">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Surface Talent">
+<meta property="og:title" content="Live surface engineering jobs — Surface Talent">
+<meta property="og:description" content="Browse live UK surface engineering and metal finishing vacancies. Permanent, contract and interim roles.">
+<meta property="og:url" content="https://surfacetalent.co.uk/jobs">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/jobs-panel.css">
+</head>
+<body class="site-page">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="nav" data-nav>
+  <a href="index.html" class="nav__brand" aria-label="Surface Talent home">
+    <svg width="28" height="20" viewBox="0 0 42 30" fill="none" aria-hidden="true">
+      <path d="M4 4 L4 22 Q4 28 10 28 L32 28 Q38 28 38 22 L38 4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="6" y="10" width="30" height="14" fill="#B87333"/>
+      <line x1="6" y1="10" x2="36" y2="10" stroke="#C0C5C9" stroke-width="1"/>
+    </svg>
+    <span>Surface Talent</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="clients.html">Clients</a>
+    <a href="candidates.html">Candidates</a>
+    <a href="disciplines.html">Disciplines</a>
+    <a href="jobs.html" class="is-active">Jobs</a>
+    <a href="about.html">About</a>
+    <a href="candidates.html#register" class="nav__cta nav__cta-mobile">Join the pool <span aria-hidden="true">→</span></a>
+  </nav>
+  <a href="candidates.html#register" class="nav__cta" data-magnetic="12">Join the pool <span aria-hidden="true">→</span></a>
+  <button class="nav__menu" data-menu type="button" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+  <section class="jobs-hero">
+    <div class="container">
+      <p class="eyebrow">Live roles · <span id="jobs-total">—</span> on the board</p>
+      <h1 class="display-md">Current vacancies.</h1>
+      <p class="lede">Scan by discipline, function, seniority and type. Can't see what you're looking for? Join the talent pool — we respond within 24 hours.</p>
+
+      <div class="filter-bar" id="filters">
+        <input type="search" id="q" placeholder="Search roles, locations…" aria-label="Search roles">
+        <select id="discipline" aria-label="Discipline">
+          <option value="">All disciplines</option>
+          <option>Electroplating</option>
+          <option>Anodising</option>
+          <option>Powder coating</option>
+          <option>Heat treatment</option>
+          <option>Thermal spray</option>
+          <option>PVD / CVD</option>
+        </select>
+        <select id="function" aria-label="Function">
+          <option value="">All functions</option>
+          <option>Process and production</option>
+          <option>Quality and technical</option>
+          <option>EHS and compliance</option>
+          <option>Continuous improvement</option>
+          <option>Maintenance and controls</option>
+          <option>Commercial</option>
+          <option>Leadership</option>
+        </select>
+        <select id="seniority" aria-label="Seniority">
+          <option value="">All levels</option>
+          <option>Professional</option>
+          <option>Manager</option>
+          <option>Director</option>
+        </select>
+        <select id="type" aria-label="Employment type">
+          <option value="">All types</option>
+          <option>Permanent</option>
+          <option>Contract</option>
+          <option>Interim</option>
+        </select>
+        <button type="button" class="filter-reset" id="filter-reset" hidden>Clear</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--chalk" style="padding-top:1.75rem">
+    <div class="container">
+      <div class="jobs-meta">
+        <p class="mono"><span id="jobs-count">—</span> roles shown</p>
+        <a href="candidates.html#register" style="font-size:0.9rem;border-bottom:1px solid var(--copper);padding-bottom:2px">Join talent pool →</a>
+      </div>
+      <div id="jobs-list"></div>
+    </div>
+  </section>
+
+  <section class="close-band" data-nav-dark>
+    <div class="close-band__inner">
+      <p class="mono close-band__kicker">Nothing fitting?</p>
+      <h2 class="close-band__headline">Register your CV and we'll <span class="is-accent">come to you.</span></h2>
+      <div class="close-band__ctas">
+        <a href="candidates.html#register" class="btn btn--copper btn--lg" data-magnetic="16">Join our talent pool <span class="arrow">→</span></a>
+        <a href="https://calendar.app.google/Wdm9xHVcBNwS2VuS7" class="btn btn--ghost btn--lg" data-booking target="_blank" rel="noopener noreferrer">Have a confidential call</a>
+      </div>
+      <footer class="site-foot">
+        <div>
+          <strong>Surface Talent</strong>
+          <span>Sister business of EMC Surface Technologies</span>
+        </div>
+        <nav class="site-foot__nav" aria-label="Footer">
+          <a href="clients.html">Clients</a>
+          <a href="candidates.html">Candidates</a>
+          <a href="disciplines.html">Disciplines</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="site-foot__legal">
+          <a href="privacy.html">Privacy</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="modern-slavery.html">Modern slavery</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="assets/site.js"></script>
+<script src="assets/jobs.js"></script>
+</body>
+</html>

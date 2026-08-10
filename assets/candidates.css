@@ -1,0 +1,276 @@
+/* Candidates page — confidential, respectful journey
+   Depends on tokens.css + site.css
+   ─────────────────────────────────────────────────────────── */
+
+.cand-hero {
+  padding: clamp(3.5rem, 8vh, 6rem) 0 clamp(2.5rem, 5vh, 4rem);
+  background:
+    radial-gradient(ellipse 50% 40% at 90% 10%, rgba(184, 115, 51, 0.14), transparent 55%),
+    linear-gradient(180deg, var(--paper) 0%, var(--chalk) 100%);
+}
+
+.cand-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+}
+
+@media (max-width: 900px) {
+  .cand-hero__grid { grid-template-columns: 1fr; }
+}
+
+.cand-hero__aside {
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 1.35rem 1.45rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.cand-hero__aside .mono { color: var(--copper); }
+.cand-hero__aside p {
+  font-size: 0.92rem;
+  color: var(--steel);
+  max-width: 28ch;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+@media (max-width: 800px) {
+  .trust-grid { grid-template-columns: 1fr; }
+}
+
+.trust-card {
+  background: var(--chalk);
+  padding: clamp(1.4rem, 2.8vw, 2rem);
+  display: grid;
+  gap: 0.65rem;
+}
+
+.trust-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 400;
+}
+
+.trust-card p {
+  color: var(--steel);
+  font-size: 0.94rem;
+  max-width: 32ch;
+}
+
+/* Live roles preview */
+.roles-preview {
+  display: grid;
+  gap: 1px;
+  background: color-mix(in srgb, var(--chalk) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--chalk) 12%, transparent);
+}
+
+.role-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr) auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.1rem 1.25rem;
+  background: var(--bath-elev);
+  color: var(--chalk);
+  transition: background 0.25s ease;
+}
+
+.role-row:hover { background: #1c2229; }
+
+@media (max-width: 700px) {
+  .role-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+.role-row__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.role-row__meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--chalk) 50%, transparent);
+}
+
+.role-row__cta {
+  font-size: 0.85rem;
+  color: var(--copper);
+  justify-self: end;
+}
+
+@media (max-width: 700px) {
+  .role-row__cta { justify-self: start; margin-top: 0.35rem; }
+}
+
+.roles-empty,
+.roles-loading {
+  padding: 1.5rem 1.25rem;
+  background: var(--bath-elev);
+  color: color-mix(in srgb, var(--chalk) 60%, transparent);
+  font-size: 0.95rem;
+}
+
+/* Process journey — one system, not six cards */
+.journey {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 1000px) {
+  .journey { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .journey { grid-template-columns: 1fr 1fr; }
+}
+
+.journey__step {
+  padding: 1.35rem 1rem 1.5rem 0.85rem;
+  border-right: 1px solid var(--line);
+}
+
+.journey__step:first-child { padding-left: 0; }
+.journey__step:last-child { border-right: 0; }
+
+.journey__step .mono {
+  color: var(--copper);
+  display: block;
+  margin-bottom: 0.65rem;
+}
+
+.journey__step h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+
+.journey__step p {
+  font-size: 0.88rem;
+  color: var(--steel);
+  max-width: 18ch;
+}
+
+/* Confidentiality strip */
+.permission {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .permission { grid-template-columns: 1fr; }
+}
+
+.permission h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.permission p {
+  color: var(--steel);
+  max-width: 38ch;
+}
+
+.permission ul {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.permission li {
+  padding-left: 1rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.permission li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--copper);
+}
+
+/* Registration */
+.register-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .register-shell { grid-template-columns: 1fr; }
+}
+
+.register-panel {
+  background: var(--bath-elev);
+  border: 1px solid color-mix(in srgb, var(--chalk) 12%, transparent);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.register-panel h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2rem);
+  font-weight: 400;
+  color: var(--chalk);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.register-panel > .lede {
+  color: color-mix(in srgb, var(--chalk) 62%, transparent);
+  margin-bottom: 1.5rem;
+}
+
+.families {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .families { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .families { grid-template-columns: 1fr; }
+}
+
+.families h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+
+.families p {
+  color: var(--steel);
+  font-size: 0.9rem;
+  max-width: 30ch;
+}

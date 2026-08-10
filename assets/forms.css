@@ -1,0 +1,159 @@
+/* Surface Talent — forms: intent, chips, phone, errors
+   Mobile-first
+   ─────────────────────────────────────────────────────────── */
+
+.intent-seg {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
+}
+
+@media (min-width: 640px) {
+  .intent-seg {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.intent-seg__btn {
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line-strong);
+  background: var(--chalk);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.intent-seg__btn.is-on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--chalk);
+}
+
+.chip-fieldset {
+  border: 0;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.chip-fieldset legend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.55rem;
+}
+
+.chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chip input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--copper);
+}
+
+.chip:has(input:checked) {
+  border-color: var(--copper);
+  background: color-mix(in srgb, var(--copper) 10%, var(--white));
+}
+
+.form-panel[hidden] { display: none !important; }
+
+.field-error {
+  display: none;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--signal);
+}
+
+.field-error.is-show { display: block; }
+
+.field-invalid {
+  border-color: var(--signal) !important;
+}
+
+.iti {
+  width: 100%;
+  display: block;
+}
+
+.iti__tel-input {
+  width: 100%;
+}
+
+.form-shell {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: clamp(1.15rem, 3vw, 1.75rem);
+}
+
+.form .form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 700px) {
+  .form .form__row--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--steel);
+  margin: 0 0 1rem;
+  max-width: 42ch;
+}
+
+.contact-hero {
+  padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
+}
+
+.contact-hero .lede {
+  margin-top: 0.85rem;
+}
+
+.route-grid {
+  margin-top: 1.25rem;
+}
+
+.page-hero.contact-hero {
+  min-height: 0;
+}
+
+.form--on-dark .chip {
+  background: var(--bath-elev);
+  border-color: color-mix(in srgb, var(--chalk) 18%, transparent);
+  color: var(--chalk);
+}
+
+.form--on-dark .chip:has(input:checked) {
+  border-color: var(--copper);
+  background: color-mix(in srgb, var(--copper) 18%, var(--bath-elev));
+}
+
+.form--on-dark .chip-fieldset legend,
+.form--on-dark .field-label {
+  color: color-mix(in srgb, var(--chalk) 82%, transparent);
+}

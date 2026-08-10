@@ -1,0 +1,284 @@
+/* Jobs instrument panel · role dossier · apply transaction
+   Depends on tokens.css + site.css. Minimal motion.
+   ─────────────────────────────────────────────────────────── */
+
+.jobs-hero {
+  padding: clamp(2.5rem, 6vh, 4rem) 0 1.5rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.jobs-hero h1 {
+  margin-bottom: 0.65rem;
+}
+
+.jobs-hero .lede { max-width: 52ch; }
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(4, minmax(0, 1fr)) auto;
+  gap: 0.55rem;
+  margin-top: 1.75rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .filter-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .filter-bar { grid-template-columns: 1fr; }
+}
+
+.filter-bar input,
+.filter-bar select {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  outline: 2px solid color-mix(in srgb, var(--copper) 55%, transparent);
+  outline-offset: 1px;
+}
+
+.filter-bar select.is-active,
+.filter-bar input.is-active {
+  border-color: var(--copper);
+  background: color-mix(in srgb, var(--copper) 6%, var(--white));
+}
+
+.filter-reset {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  padding: 0.7rem 0.85rem;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.filter-reset:hover {
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.filter-reset[hidden] { display: none; }
+
+.jobs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.jobs-meta .mono { color: var(--copper); }
+
+.jobs-panel {
+  display: grid;
+  gap: 1px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.job-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding: 1.15rem 1.25rem;
+  background: var(--chalk);
+  transition: background 0.2s ease;
+}
+
+.job-row:hover { background: var(--white); }
+
+@media (max-width: 800px) {
+  .job-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
+.job-row__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.job-row__sub {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.88rem;
+  color: var(--steel);
+}
+
+.job-row__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.job-row__go {
+  color: var(--copper);
+  font-size: 0.88rem;
+  font-weight: 500;
+  justify-self: end;
+}
+
+@media (max-width: 800px) {
+  .job-row__go { justify-self: start; margin-top: 0.35rem; }
+}
+
+.jobs-state {
+  padding: 2.5rem 1.5rem;
+  background: var(--chalk);
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.jobs-state h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0.35rem 0 0.75rem;
+}
+
+.jobs-state p {
+  color: var(--steel);
+  max-width: 42ch;
+  margin-bottom: 1.25rem;
+}
+
+/* Role dossier */
+.dossier-hero {
+  padding: clamp(2.5rem, 6vh, 4rem) 0 1.75rem;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.dossier-hero h1 {
+  max-width: 18ch;
+  margin-bottom: 0.75rem;
+}
+
+.dossier-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.6fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+  padding: clamp(2rem, 5vh, 3.5rem) 0 clamp(4rem, 8vh, 5.5rem);
+}
+
+@media (max-width: 900px) {
+  .dossier-layout { grid-template-columns: 1fr; }
+}
+
+.dossier-body h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  margin: 2rem 0 0.75rem;
+}
+
+.dossier-body h2:first-child { margin-top: 0; }
+
+.dossier-body p {
+  color: var(--ink-soft);
+  max-width: 62ch;
+  margin-bottom: 0.85rem;
+}
+
+.dossier-side {
+  position: sticky;
+  top: calc(var(--nav-h) + 1rem);
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: 1.35rem 1.4rem;
+}
+
+@media (max-width: 900px) {
+  .dossier-side { position: relative; top: auto; order: -1; }
+}
+
+.dossier-side dl {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0 0 1.35rem;
+}
+
+.dossier-side dt {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 0.2rem;
+}
+
+.dossier-side dd {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+.dossier-side .cta-row {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.dossier-side .btn { justify-content: center; }
+
+/* Apply transaction */
+.apply-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+  padding: clamp(2.5rem, 6vh, 4rem) 0 clamp(4rem, 8vh, 5.5rem);
+}
+
+@media (max-width: 900px) {
+  .apply-shell { grid-template-columns: 1fr; }
+}
+
+.apply-role {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.apply-role .mono { color: var(--copper); margin-bottom: 0.35rem; }
+.apply-role strong {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  display: block;
+}
+
+.apply-panel {
+  border: 1px solid var(--line);
+  background: var(--white);
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+}

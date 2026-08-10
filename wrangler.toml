@@ -1,0 +1,7 @@
+# Cloudflare Pages — Surface Talent
+name = "surface-talent-website"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "."
+
+[vars]
+AIRTABLE_TABLE = "Jobs"

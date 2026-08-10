@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.cursor/
+.qa-about/
+.wrangler/
+dist/
+*.cv.pdf
+uploads/
+integrations/google-apps-script/.clasp.json
+.clasp.json
+.secrets/

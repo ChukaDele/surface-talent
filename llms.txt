@@ -1,0 +1,20 @@
+# Surface Talent
+
+> Specialist recruitment for UK surface engineering and metal finishing.
+
+Canonical site: https://surfacetalent.co.uk/
+
+## Pages
+
+- [Home](https://surfacetalent.co.uk/): Positioning and proof
+- [Clients](https://surfacetalent.co.uk/clients): Hiring / retained search for employers
+- [Candidates](https://surfacetalent.co.uk/candidates): Talent pool and career representation
+- [Disciplines](https://surfacetalent.co.uk/disciplines): Process lanes (electroplating, anodising, powder coating, heat treatment, thermal spray, PVD/CVD, and more)
+- [Jobs](https://surfacetalent.co.uk/jobs): Live vacancies
+- [About](https://surfacetalent.co.uk/about): Provenance — sister business of the EMC Surface Technologies group
+- [Contact](https://surfacetalent.co.uk/contact): Brief a role or confidential conversation
+
+## Contact
+
+- Email: hello@surfacetalent.co.uk
+- Book: https://calendar.app.google/Wdm9xHVcBNwS2VuS7

@@ -1,0 +1,6 @@
+# Surface Talent — https://surfacetalent.co.uk/
+User-agent: *
+Allow: /
+
+# Prefer the production host. Preview hosts should use noindex or separate config.
+Sitemap: https://surfacetalent.co.uk/sitemap.xml

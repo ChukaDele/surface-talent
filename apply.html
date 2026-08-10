@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply in confidence — Surface Talent</title>
+<meta name="description" content="Apply for a surface engineering role with Surface Talent. Upload your CV confidentially.">
+<link rel="canonical" href="https://surfacetalent.co.uk/apply">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/jobs-panel.css">
+<link rel="stylesheet" href="assets/forms.css">
+<link rel="stylesheet" href="assets/vendor/intl-tel-input/build/css/intlTelInput.min.css">
+</head>
+<body class="site-page" data-source-page="apply">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="nav" data-nav>
+  <a href="index.html" class="nav__brand" aria-label="Surface Talent home">
+    <svg width="28" height="20" viewBox="0 0 42 30" fill="none" aria-hidden="true">
+      <path d="M4 4 L4 22 Q4 28 10 28 L32 28 Q38 28 38 22 L38 4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="6" y="10" width="30" height="14" fill="#B87333"/>
+      <line x1="6" y1="10" x2="36" y2="10" stroke="#C0C5C9" stroke-width="1"/>
+    </svg>
+    <span>Surface Talent</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="clients.html">Clients</a>
+    <a href="candidates.html">Candidates</a>
+    <a href="disciplines.html">Disciplines</a>
+    <a href="jobs.html" class="is-active">Jobs</a>
+    <a href="about.html">About</a>
+    <a href="jobs.html" class="nav__cta nav__cta-mobile">See live roles <span aria-hidden="true">→</span></a>
+  </nav>
+  <a href="jobs.html" class="nav__cta" data-magnetic="12">See live roles <span aria-hidden="true">→</span></a>
+  <button class="nav__menu" data-menu type="button" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+  <section class="page-hero" style="padding-bottom:0">
+    <div class="container">
+      <p class="eyebrow">Apply in confidence</p>
+      <h1 class="display-md">Submit a confidential application.</h1>
+      <p class="lede" style="margin-top:1rem">We will not share your details without your permission.</p>
+    </div>
+  </section>
+
+  <div class="container apply-shell">
+    <div>
+      <div class="apply-role">
+        <p class="mono">Selected role</p>
+        <strong id="apply-role-title">General application</strong>
+      </div>
+      <p class="lede">Upload your CV and a short note on experience and timing.</p>
+      <div class="cta-row" style="margin-top:1.25rem">
+        <a href="https://calendar.app.google/Wdm9xHVcBNwS2VuS7" class="btn" data-booking data-cta="job_apply_book">Book a confidential conversation</a>
+        <a href="jobs.html" class="btn">Back to roles</a>
+      </div>
+    </div>
+
+    <div class="apply-panel">
+      <div class="form__msg form__msg--ok" data-form-success hidden></div>
+      <div class="form__msg form__msg--err" data-form-error hidden>
+        Something went wrong. Email us at
+        <a href="mailto:hello@surfacetalent.co.uk">hello@surfacetalent.co.uk</a>
+      </div>
+
+      <form class="form" id="apply-form" novalidate>
+        <input type="text" name="_gotcha" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="form_type" value="job_application">
+        <input type="hidden" name="enquiry_type" value="Job application">
+        <input type="hidden" name="cta_id" value="job_apply">
+        <input type="hidden" name="job_id" id="apply-job-id" value="">
+        <input type="hidden" name="job_title" id="apply-job-title" value="">
+        <input type="hidden" name="role" id="apply-role-field" value="">
+
+        <div class="form__row form__row--2">
+          <div>
+            <label class="field-label" for="apply-name">Full name *</label>
+            <input id="apply-name" name="name" required autocomplete="name">
+          </div>
+          <div>
+            <label class="field-label" for="apply-email">Email *</label>
+            <input id="apply-email" name="email" required type="email" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form__row form__row--2">
+          <div>
+            <label class="field-label" for="apply-phone">Phone</label>
+            <input id="apply-phone" name="phone" type="tel" autocomplete="tel" data-phone>
+          </div>
+          <div>
+            <label class="field-label" for="apply-location">Current location</label>
+            <input id="apply-location" name="locations">
+          </div>
+        </div>
+
+        <div class="form__row form__row--2">
+          <div>
+            <label class="field-label" for="apply-current">Current role</label>
+            <input id="apply-current" name="current_role">
+          </div>
+          <div>
+            <label class="field-label" for="apply-employer">Current employer</label>
+            <input id="apply-employer" name="current_employer">
+          </div>
+        </div>
+
+        <div>
+          <label class="field-label" for="apply-notice">Notice period</label>
+          <input id="apply-notice" name="notice_period">
+        </div>
+
+        <div>
+          <label class="field-label" for="apply-cv">CV * (PDF/DOC/DOCX, max 10&nbsp;MB)</label>
+          <input id="apply-cv" name="cv" type="file" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+        </div>
+
+        <div>
+          <label class="field-label" for="apply-summary">Short summary</label>
+          <textarea id="apply-summary" name="summary" rows="4" placeholder="Experience and what you want next"></textarea>
+        </div>
+
+        <label class="form__consent">
+          <input type="checkbox" name="privacy_consent" required>
+          <span>I agree to the <a href="privacy.html">privacy policy</a>. You will not send my CV without my permission.</span>
+        </label>
+
+        <button type="submit" class="btn btn--copper btn--lg">
+          Submit application <span class="arrow">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="close-band" data-nav-dark style="padding-top:2.5rem">
+  <div class="close-band__inner" style="padding-bottom:0">
+    <footer class="site-foot">
+      <div>
+        <strong>Surface Talent</strong>
+        <span>Sister business of EMC Surface Technologies</span>
+      </div>
+      <nav class="site-foot__nav" aria-label="Footer">
+        <a href="clients.html">Clients</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="site-foot__legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="modern-slavery.html">Modern slavery</a>
+      </div>
+    </footer>
+  </div>
+</footer>
+
+<script type="module" src="assets/site.js"></script>
+<script type="module">
+  import { initSimpleSubmitForm } from "./assets/forms.js";
+
+  const params = new URLSearchParams(location.search);
+  const role = params.get("role");
+  const jobId = params.get("id") || params.get("job");
+  const titleEl = document.getElementById("apply-role-title");
+  const fieldEl = document.getElementById("apply-role-field");
+  const jobTitleEl = document.getElementById("apply-job-title");
+  const jobIdEl = document.getElementById("apply-job-id");
+
+  if (role) {
+    const decoded = decodeURIComponent(role);
+    if (titleEl) titleEl.textContent = decoded;
+    if (fieldEl) fieldEl.value = decoded;
+    if (jobTitleEl) jobTitleEl.value = decoded;
+  }
+  if (jobId && jobIdEl) jobIdEl.value = jobId;
+
+  initSimpleSubmitForm("apply-form", {
+    sourcePage: "apply",
+    ctaId: "job_apply",
+    formType: "job_application",
+  });
+</script>
+</body>
+</html>
