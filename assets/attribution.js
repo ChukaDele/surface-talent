@@ -1,8 +1,19 @@
 /* First-touch + UTM attribution for form submissions
-   ─────────────────────────────────────────────────────────── */
+   ───────────────────────────────────────────────────────────
+   This module deliberately stores NOTHING on the visitor's device.
 
-const LANDING_KEY = "st_landing";
-const UTM_KEY = "st_utm";
+   UK storage-and-access rules (PECR) cover sessionStorage and
+   localStorage as well as cookies. Campaign attribution is not
+   "strictly necessary" for delivering the page a visitor asked
+   for, so it cannot lawfully be written before consent — and a
+   consent banner for two attribution keys is a poor trade.
+
+   Reading the parameters already present on the current URL
+   requires no consent and no storage. So attribution still works
+   for the common case: a visitor arrives on a campaign link and
+   enquires from that page. It is simply absent when they navigate
+   away first. If cross-page attribution is wanted later, it needs
+   a consent mechanism — and cookies.html must be updated first. */
 
 function readParams() {
   const p = new URLSearchParams(location.search);
@@ -17,40 +28,24 @@ function readParams() {
 }
 
 export function initAttribution() {
-  try {
-    if (!sessionStorage.getItem(LANDING_KEY)) {
-      sessionStorage.setItem(LANDING_KEY, location.href);
-    }
-    const utm = readParams();
-    if (Object.values(utm).some(Boolean)) {
-      sessionStorage.setItem(UTM_KEY, JSON.stringify(utm));
-    }
-  } catch {
-    /* private mode */
-  }
+  /* Intentionally a no-op. Kept so callers need no change, and so
+     that anyone reintroducing device storage has to come here and
+     read the note above first. */
 }
 
 export function getAttribution() {
-  let landing = "";
-  let utm = {};
-  try {
-    landing = sessionStorage.getItem(LANDING_KEY) || location.href;
-    utm = JSON.parse(sessionStorage.getItem(UTM_KEY) || "{}");
-  } catch {
-    landing = location.href;
-  }
   const fresh = readParams();
   return {
-    original_landing_page: landing,
+    original_landing_page: location.href,
     source_page: document.body?.dataset?.sourcePage || location.pathname.replace(/^\//, "") || "home",
     source_url: location.href,
     referrer: document.referrer || "",
-    utm_source: fresh.utm_source || utm.utm_source || "",
-    utm_medium: fresh.utm_medium || utm.utm_medium || "",
-    utm_campaign: fresh.utm_campaign || utm.utm_campaign || "",
-    utm_term: fresh.utm_term || utm.utm_term || "",
-    utm_content: fresh.utm_content || utm.utm_content || "",
-    gclid: fresh.gclid || utm.gclid || "",
+    utm_source: fresh.utm_source,
+    utm_medium: fresh.utm_medium,
+    utm_campaign: fresh.utm_campaign,
+    utm_term: fresh.utm_term,
+    utm_content: fresh.utm_content,
+    gclid: fresh.gclid,
   };
 }
 

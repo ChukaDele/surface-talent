@@ -34,6 +34,13 @@ changes application code, the production database, Recruitly, or scoring.
 | A12 | Vendor language corrected | Public notices now describe real processor **categories** plus the material named ones. Removed the implication that the browser contacts Airtable. Detailed vendor list to be maintained in the internal register (item B9) | `privacy.html`, `candidate-privacy.html`, `cookies.html` |
 | A13 | Discovery of legal pages | `candidate-privacy` and `responsible-ai` added to `sitemap.xml`; all new trust and legal pages added to `llms.txt` | `sitemap.xml` validates as XML |
 | A14 | Website credential hygiene | No live credential found client-side. `RECRUITLY`/Airtable/Apps Script secrets are read only from `env` inside Pages Functions (`functions/api/jobs.js`, `functions/api/jobs/[id].js`, `functions/api/submit.js`). `assets/jobs.js` calls the same-origin `/api/jobs` proxy, not `api.airtable.com`. No rotation required by this pass | Source audit 2026-08-20 |
+| A15 | Non-essential device storage removed | `assets/attribution.js` no longer writes `st_landing` / `st_utm` to `sessionStorage`. PECR covers session storage as well as cookies, and campaign attribution is not "strictly necessary", so it could not lawfully be written before consent. Rather than put a consent banner in front of every visitor for two keys, the storage was removed. Attribution still works from parameters present on the page the form is submitted from | Verified in-browser: `document.cookie` empty, `localStorage` and `sessionStorage` empty on every page including form pages reached via a `utm_*` link |
+| A16 | Form-submission transparency | `cookies.html` §4 and `privacy.html` §2 now state exactly what travels with a form: the submitting page URL including query string, `utm_*` and `gclid` if present, the referrer, and the form-start timestamp | `cookies.html`, `privacy.html` |
+| A17 | Complaint-handling duty (DUAA 2025) | `privacy.html`, `candidate-privacy.html` and `privacy-requests.html` now commit to acknowledging a data protection complaint within 30 days, investigating without undue delay, keeping the complainant informed, and reporting the outcome. `privacy-requests.html` distinguishes a complaint from a rights request | Data (Use and Access) Act 2025, inserting s.164A / Art. 77A — legislation.gov.uk |
+| A18 | Lawful bases narrowed to what the law supports | Contractual necessity limited to individuals personally party to a contract (client/supplier contacts moved to legitimate interests). Legal obligation limited to duties that actually fall on Surface Talent, with the employer's own right-to-work duty stated. B2B marketing now distinguishes corporate subscribers from sole traders and other individual subscribers under PECR | `privacy.html` §4, `candidate-privacy.html` §4 |
+| A19 | Breach thresholds corrected | ICO notification at "risk to rights and freedoms"; notification of affected individuals only at "high risk", subject to exceptions — previously collapsed into one rule | `privacy.html` §11 |
+| A20 | Article 14 timing corrected | Where information comes from Recruitly, referrals, public sources or employers, the notice is actively provided within one month, or earlier at first contact or before first disclosure — previously "the first time we make meaningful contact" | `candidate-privacy.html` §3 |
+| A21 | Footer link contrast repaired | On the 8 legal pages the dark footer's site-nav links rendered at ~1.1:1 (near-black on near-black) because `styles.css` set `a { color: var(--anthracite) }` and `.site-foot__nav a` set no colour. Now 5.59:1. The new corporate-disclosure line was raised from 4.08:1 to ~6:1 | Measured in-browser on the preview at both desktop and 375px |
 
 ### Website items deliberately NOT changed
 
@@ -52,6 +59,7 @@ changes application code, the production database, Recruitly, or scoring.
 
 | # | Item | Status | Owner | Why | Blocks pilot? | Effort | Evidence required |
 |---|------|--------|-------|-----|---------------|--------|-------------------|
+| B0 | **Identify the current controller** | **Not done — P0 from independent review** | Owner | UK GDPR transparency requires the controller's identity. "Surface Talent" is a trading name with no incorporated entity yet, so the notices cannot name the legal person accountable for information already collected. The pages now say the controller is the person operating the business and that the full legal name is available on request — the honest interim position, but the name itself must be published. **This cannot be resolved from the repository; it needs the owner to state which existing person or entity is the controller today.** | **Yes** | 15 min once stated | The legal name published in `privacy.html` §1 and `candidate-privacy.html` §1 |
 | B1 | Insert company number | Blocked on registration | Owner | 22 `[COMPANY NUMBER]` placeholders must become the real number. Legal notices should identify the contracting entity | **Yes** | 15 min once known | Companies House certificate; number visible on the register |
 | B2 | Confirm `privacy@surfacetalent.co.uk` is monitored | Unconfirmed | Owner | It is the published route for every data right and privacy complaint on 8 pages. Domain MX is Google Workspace, but mailbox/alias existence and monitoring are not proven from outside. `hello@` is published as a fallback | **Yes** | 15 min | Successful test send and reply from an external address |
 | B3 | ICO registration and data protection fee | Not done | Owner | Controllers using personal information must pay the fee unless exempt. Recruitment does not qualify for the not-for-profit exemption. Expected Tier 1 (£52) at ≤£632k turnover or ≤10 staff | **Yes** — process personal data without it and you are in breach | 30 min | ICO registration reference on the public register of fee payers. **Only then** may the site mention it — it currently makes no ICO registration claim |
@@ -63,10 +71,10 @@ changes application code, the production database, Recruitly, or scoring.
 | B9 | Vendor / subprocessor register | Not done | Owner | Public notices use categories and name the material processors. The detailed list, DPAs and transfer instruments must exist internally | No | Half day | Register naming each processor, purpose, location, transfer mechanism, DPA reference |
 | B10 | International transfer review | Not done | Owner | Notices commit to UK adequacy / IDTA / UK Addendum. Each non-UK processor needs the actual instrument in place | No | Half day | Executed IDTA or Addendum per non-UK processor |
 | B11 | Client recruitment terms of business | Not done | Owner | `terms.html` covers website use only and says so. Commercial terms — fees, rebates, liability, introductions — are a separate contract | **Yes** for paid placements | 1–2 days with legal input | Signed terms of business template |
-| B12 | Rename `privacy_consent` field | Not done | Website owner | The user-facing wording is now an acknowledgement, but the field name and the Sheet column still say "consent". Cosmetic internally, but it invites the wrong legal reading later | No | 1 hour plus an end-to-end form test | Form submission succeeds and the Sheet column is renamed |
+| B12 | Rename `privacy_consent` field | Not done | Website owner | The visible wording is now an acknowledgement, but `functions/api/submit.js` still names the field `privacy_consent`, rejects submissions with `consent_required`, and records `privacy_consent: true`. The independent review flagged that this internal naming is operational evidence contradicting both notices' statement that acknowledging a notice is not consent. The required checkbox itself was kept because the task specified that wording; the field name should follow | No | 1 hour plus an end-to-end form test | Form submission succeeds and the Sheet column is renamed |
 | B13 | Review and merge the landing a11y branch | Open | Website owner | `codex/launch-readiness-website-20260815` (`3cffcf2`) holds landing-page accessibility and contrast fixes that never reached production | No | 1 hour | Reviewed diff, preview QA, merged |
 | B14 | Connect the custom domain to Cloudflare Pages | **Not done — and material** | Owner | `surfacetalent.co.uk` is **not** served by the `surface-talent-website` Pages project. It currently returns a single early-build page for every path from a Cloudflare zone outside the `Engineeringsapa1@gmail.com` account. Until the domain is connected, none of the work in section A is publicly reachable | **Yes** — nothing in section A is live without it | 30 min plus DNS propagation | `https://surfacetalent.co.uk/candidate-privacy` returns the new page, and a nonsense path returns the 404 page rather than the homepage |
-| B15 | Confirm the session-storage basis | Open judgement call | Owner | `st_landing` / `st_utm` are first-party, tab-scoped, shared with nobody and used to give an enquiry context. `cookies.html` discloses them fully. Whether they are "strictly necessary" under PECR is a judgement; the conservative alternative is to drop the cross-page memory | No | 1 hour if removal is chosen | Documented decision, or the code change |
+| B15 | Restore cross-page attribution, with consent | Optional | Owner / website owner | The session-storage attribution was **removed** (A15) rather than left unconsented, so campaign attribution now only survives if the visitor enquires from the page they landed on. If cross-page attribution matters commercially, it needs a consent mechanism — and `cookies.html` must be updated before any storage is reintroduced | No | Half day | A consent gate that blocks the storage until accepted, plus updated `cookies.html` |
 | B16 | Breach / incident procedure | Not done | Owner | `privacy.html` commits to notifying the ICO and affected people. That commitment needs a procedure and a 72-hour clock behind it | No | Half day | Written procedure with roles and timings |
 | B17 | Recruitment compliance and candidate representation SOPs | Not done | Owner | The site now makes firm operational promises: ask before every submission, never approach a current employer, confirm terms directly, escalate exploitation indicators. These must be written down so they survive the first busy week | No | 1 day | Written SOPs |
 | B18 | Insurance review | Not done | Owner | Professional indemnity and cyber cover appropriate to holding candidate personal data | No | Half day | Policy schedule |
@@ -109,3 +117,48 @@ changes application code, the production database, Recruitly, or scoring.
 - ICO data protection fee tiers and exemptions — ico.org.uk
 - Fair Work Agency (operational from 7 April 2026, replacing the Employment Agency Standards Inspectorate) — GOV.UK
 - Modern Slavery and Exploitation Helpline, 08000 121 700 — GOV.UK / modernslaveryhelpline.org
+
+---
+
+## Independent content review
+
+An independent read-only compliance red-team review was run against commit `c4134b7` using a
+different provider (Codex, `codex-cli` 0.147.0) so that the reviewer was not the author. Its
+verdict was **REQUEST CHANGES**, with 3 P0 and 8 P1/P2 findings.
+
+### Accepted and fixed
+
+| Finding | Resolution |
+|---|---|
+| P0 — controller not legally identified (`privacy.html`, `candidate-privacy.html`) | Copy improved to state that Surface Talent is currently a trading name, that the controller is the person operating it, and that the full legal name is available on request. **Not fully closed** — publishing the name needs the owner. Tracked as B0, and it blocks pilot |
+| P0 — "no consent needed" / "no tracking" unsupportable while `sessionStorage` attribution runs | Fixed at the root: the storage was removed (A15), so the claim is now literally true. Copy rewritten to match, plus a new section on what a form submission actually sends (A16) |
+| P1 — stored values under-described (full URL, `gclid`) | Superseded by removal; the same detail is now disclosed for form submissions instead (A16) |
+| P1 — Article 14 notification timing | Corrected to within one month, or earlier at first contact or before first disclosure (A20) |
+| P1 — B2B marketing basis ignored PECR subscriber distinctions | Corrected (A18) |
+| P1 — contractual necessity too broad for client/supplier contacts | Corrected (A18) |
+| P1 — legal obligation too broad for right-to-work and equality records | Corrected (A18) |
+| P1 — complaint-handling duty omitted | Added across three pages (A17) |
+| P1 — breach-notification thresholds collapsed | Corrected (A19) |
+| P1 — accessibility statement contained absolutes it cannot guarantee | Softened: an inaccessible page will not be the reason an application fails to reach us, and adjustments are discussed and put to the employer rather than guaranteed |
+| P2 — one-month response promise contradicted the requests page | Both pages now state the same rule, including the lawful extension |
+
+### Considered and deliberately not changed
+
+| Finding | Reason |
+|---|---|
+| P1 — the mandatory notice-acknowledgement checkbox is arguably contradictory "consent" evidence | The acknowledgement wording was specified by the task, and both notices state plainly that acknowledging them is not a lawful basis. `functions/api/submit.js` also requires the field, so removing the checkbox breaks submissions. The reviewer's underlying point is real and is tracked as B12 (rename the field), not as a copy change |
+
+### Reviewer findings with no defect
+
+The reviewer separately confirmed that `responsible-ai.html` and the AI sections of the candidate
+notice accurately describe the product's actual behaviour without claiming bias-free operation or
+certification, and that `modern-slavery.html` correctly presents itself as a voluntary policy
+rather than a section 54 statement, with a current and accurate Fair Work Agency reference.
+
+### Residual P0
+
+One P0 remains open: **B0, the current controller's legal identity.** It cannot be closed from the
+repository, and it is not the `[COMPANY NUMBER]` placeholder — it is the separate question of which
+existing person or entity is the controller before incorporation. The published copy is the most
+accurate wording available without inventing a legal name, and it gives readers a route to obtain
+it.
