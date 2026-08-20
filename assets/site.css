@@ -551,6 +551,9 @@ body.site-page {
   align-items: center;
   min-height: 44px;
   padding: 0.35rem 0.25rem;
+  /* Legal pages also load styles.css, whose `a { color: var(--anthracite) }`
+     would otherwise paint these dark links on the dark footer. */
+  color: inherit;
 }
 
 .site-foot__nav a:hover { color: var(--copper); }
