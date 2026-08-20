@@ -183,7 +183,9 @@ h1, h2, h3, h4, p { margin: 0; }
   max-width: 60ch;
   font-size: 0.74rem;
   line-height: 1.65;
-  color: color-mix(in srgb, var(--chalk) 45%, transparent);
+  /* 58% keeps this fine print at ~6:1 on the dark footer. 45% measured 4.08:1,
+     under the 4.5:1 AA floor for text this size. */
+  color: color-mix(in srgb, var(--chalk) 58%, transparent);
 }
 
 /* Light-background variant (e.g. 404) */
