@@ -6,10 +6,12 @@ legal, privacy, AI-transparency and ethical-recruitment matters, and what remain
 changes application code, the production database, Recruitly, or scoring.
 
 - **Pass completed:** 2026-08-20
-- **Website source of record:** `ChukaDele/surface-talent` (`origin`) `main` @ `d08b80b`, mirrored to
+- **Website source of record:** `ChukaDele/surface-talent` (`origin`) `main`, mirrored to
   `ChukaDele/surface-talent-website` as branch `compliance/website-legal-readiness-20260820`
 - **Hosting:** Cloudflare Pages project `surface-talent-website` (direct upload, no Git integration)
-- **Temporary review URL (deployed):** `https://surface-talent-website.pages.dev`
+- **Temporary review URL (deployed):** `https://surface-talent-website.pages.dev` — the owner's
+  review destination for this pass. Each deploy also produces an immutable
+  `https://<id>.surface-talent-website.pages.dev` URL, useful for pinning a review to one build.
 - **Canonical domain:** `https://surfacetalent.co.uk/` — **NOT connected, and cutover is not
   authorised.** The owner reviews the temporary site first (see B14)
 - **Retained placeholder:** `[COMPANY NUMBER]` — 22 occurrences across 18 pages. **Do not fill in
