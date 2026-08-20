@@ -26,10 +26,9 @@
   .legal-body .callout p{margin:0}
   .cookie-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
   .cookie-table th,.cookie-table td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid #e4e4e4;vertical-align:top}
-  /* Only the hostname column may break mid-token; blanket overflow-wrap shredded
-     the "Sets cookies?" header one letter per line at 375px. */
+  /* Hostnames are the only long tokens here, so only that column may break
+     mid-word. A blanket rule shredded ordinary words like "Cloudflare". */
   .cookie-table td:first-child{overflow-wrap:anywhere}
-  .cookie-table th:last-child,.cookie-table td:last-child{white-space:nowrap}
   .cookie-table th{font-weight:600;color:#1c1f22}
 </style>
 </head>
@@ -110,12 +109,12 @@
     <p>Some parts of the site are served from other companies' networks. Those companies necessarily see your IP address and basic request information, because that is how the web works. None of them set cookies on our pages, and none of them are analytics or advertising services.</p>
     <table class="cookie-table">
       <thead>
-        <tr><th>Service</th><th>What it is for</th><th>Sets cookies?</th></tr>
+        <tr><th>Service</th><th>What it is for</th></tr>
       </thead>
       <tbody>
-        <tr><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Serves the typefaces used across the site</td><td>No</td></tr>
-        <tr><td>jsDelivr (cdn.jsdelivr.net)</td><td>Serves the open-source animation and smooth-scrolling libraries used on the home page</td><td>No</td></tr>
-        <tr><td>Cloudflare</td><td>Hosts this website and serves every page</td><td>No</td></tr>
+        <tr><td>Google Fonts (fonts.googleapis.com, fonts.gstatic.com)</td><td>Serves the typefaces used across the site</td></tr>
+        <tr><td>jsDelivr (cdn.jsdelivr.net)</td><td>Serves the open-source animation and smooth-scrolling libraries used on the home page</td></tr>
+        <tr><td>Cloudflare</td><td>Hosts this website and serves every page</td></tr>
       </tbody>
     </table>
     <p>Two things people often assume are here, and are not:</p>
