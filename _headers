@@ -3,8 +3,13 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
 
+# Asset filenames here are stable (site.css, landing.js …) — there is no
+# content hashing — so a long max-age hides every CSS/JS change from anyone who
+# has visited before. It hid a real layout fix during review on 2026-08-20.
+# Revalidate instead: ETags make this cheap (304s), and it is what Pages
+# already sends for HTML.
 /assets/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate
 
 /api/*
   Cache-Control: no-store

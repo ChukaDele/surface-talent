@@ -375,6 +375,7 @@ body.site-page {
 .form .visually-hidden {
   width: 1px;
   height: 1px;
+  padding: 0;
 }
 
 
