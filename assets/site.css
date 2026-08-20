@@ -367,6 +367,17 @@ body.site-page {
   appearance: none;
 }
 
+/* The visually-hidden utility must keep its 1px box inside a form.
+   `.form input` (0,1,1) outranks `.visually-hidden` (0,1,0) and loads later,
+   so the spam honeypot was being stretched to width:100% while absolutely
+   positioned — pushing /apply and /contact ~645px wider than the viewport and
+   giving both pages a real horizontal scrollbar. */
+.form .visually-hidden {
+  width: 1px;
+  height: 1px;
+}
+
+
 .form textarea { min-height: 6rem; resize: vertical; }
 
 .form input:focus,
