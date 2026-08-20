@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility statement — Surface Talent</title>
+<meta name="description" content="How accessible the Surface Talent website is, what we have built in, the limitations we know about, and how to tell us about a problem.">
+<link rel="canonical" href="https://surfacetalent.co.uk/accessibility">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .legal-body{max-width:720px;padding-top:3rem;padding-bottom:5rem}
+  .legal-body h2{font-size:1.25rem;margin-top:2.5rem;margin-bottom:.6rem}
+  .legal-body p,.legal-body li{font-size:.95rem;color:#333;line-height:1.7}
+  .legal-body ul{margin:0 0 1rem 1.2rem}
+  .legal-body li{margin-bottom:.3rem}
+  .legal-body a{color:var(--copper);text-decoration:underline}
+  .legal-body .updated{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--steel);letter-spacing:.06em;margin-top:.5rem}
+  .legal-body .callout{border-left:3px solid var(--copper);padding:.85rem 0 .85rem 1rem;margin:1.5rem 0;background:#faf8f6}
+  .legal-body .callout p{margin:0}
+</style>
+</head>
+<body class="site-page">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="nav" data-nav>
+  <a href="index.html" class="nav__brand" aria-label="Surface Talent home">
+    <svg width="28" height="20" viewBox="0 0 42 30" fill="none" aria-hidden="true">
+      <path d="M4 4 L4 22 Q4 28 10 28 L32 28 Q38 28 38 22 L38 4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+      <rect x="6" y="10" width="30" height="14" fill="#B87333"/>
+      <line x1="6" y1="10" x2="36" y2="10" stroke="#C0C5C9" stroke-width="1"/>
+    </svg>
+    <span>Surface Talent</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="clients.html">Clients</a>
+    <a href="candidates.html">Candidates</a>
+    <a href="disciplines.html">Disciplines</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="nav__cta nav__cta-mobile">Brief us <span aria-hidden="true">&rarr;</span></a>
+  </nav>
+  <a href="contact.html" class="nav__cta" data-magnetic="12">Brief us <span aria-hidden="true">&rarr;</span></a>
+  <button class="nav__menu" data-menu type="button" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+<span id="main" tabindex="-1"></span>
+
+<section class="page-intro">
+  <div class="container">
+    <span class="eyebrow">Accessibility</span>
+    <h1>Accessibility statement</h1>
+  </div>
+</section>
+
+<section style="padding-top:0;border:none">
+  <div class="container legal-body">
+    <p class="updated">Last updated: August 2026</p>
+
+    <p>We want this website to be usable by as many people as possible, including people using a keyboard only, a screen reader, magnification, or a setting that reduces motion.</p>
+
+    <div class="callout">
+      <p>We aim to meet <strong>WCAG 2.2 level AA</strong>. We have <strong>not</strong> had an independent accessibility audit, and we are not certified or accredited against any accessibility standard. This statement describes what we have built and tested ourselves, and what we know is not finished.</p>
+    </div>
+
+    <h2>What we have built in</h2>
+    <ul>
+      <li>A "skip to main content" link as the first item on every page.</li>
+      <li>Keyboard access to all navigation, links, form fields and buttons, with a visible focus outline that also works on dark sections.</li>
+      <li>Headings in a logical order, and page regions marked up so a screen reader can navigate by landmark.</li>
+      <li>Form fields with visible, programmatically associated labels, and validation messages in text rather than colour alone.</li>
+      <li>Decorative graphics hidden from assistive technology, and meaningful icons and controls given accessible names.</li>
+      <li>Touch and click targets in the navigation and footer sized to at least 44 by 44 pixels.</li>
+      <li>Respect for the operating system "reduce motion" setting: scroll and entrance animation is reduced or removed when that setting is on.</li>
+      <li>A responsive layout that works down to 375 pixels wide, and text that reflows when you zoom.</li>
+      <li>Pages marked as British English so screen readers pronounce them correctly.</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <p>We would rather list these than imply they do not exist.</p>
+    <ul>
+      <li><strong>No independent audit.</strong> Our testing is internal — keyboard, screen reader spot checks, zoom and reduced motion. It is not a substitute for a formal audit or for testing with disabled users.</li>
+      <li><strong>The jobs list needs JavaScript.</strong> Live roles are loaded dynamically. With JavaScript unavailable, the jobs pages show a fallback message rather than the list. You can always reach us directly for the current roles.</li>
+      <li><strong>The home page is motion-heavy.</strong> It uses scroll-linked animation. This is reduced when "reduce motion" is on, but the page is still visually busier than the rest of the site.</li>
+      <li><strong>Third-party content.</strong> Our booking link opens Google Calendar, which we do not control. Role descriptions and documents originate from employers, and we cannot guarantee their formatting is accessible.</li>
+      <li><strong>Colour contrast.</strong> We have checked contrast on text and controls, but some large display type and decorative detail sits closer to the minimum than we would like.</li>
+    </ul>
+
+    <h2>Tell us about a problem</h2>
+    <p>If something on this site stops you doing what you came to do, please tell us — it is the fastest way for us to fix it.</p>
+    <ul>
+      <li>Email <a href="mailto:hello@surfacetalent.co.uk">hello@surfacetalent.co.uk</a> with the page and what happened.</li>
+      <li>Or use any route on our <a href="contact.html">contact page</a>.</li>
+    </ul>
+    <p>We will acknowledge your message and tell you what we can do and when. If you cannot use a form or upload on this site, we will take the information another way — including by phone or email — so that an inaccessible page never costs you a role.</p>
+
+    <h2>Applying for a role another way</h2>
+    <p>If the application form does not work for you, email your CV and the role you are interested in to <a href="mailto:hello@surfacetalent.co.uk">hello@surfacetalent.co.uk</a>. We will treat it exactly as we would a form submission. If you need a reasonable adjustment at any stage — including at interview — tell us and we will arrange it with the employer.</p>
+
+    <h2>How this statement is maintained</h2>
+    <p>We review this page when we change the site materially, and at least once a year. If we commission an independent audit, or achieve a formal conformance level, we will say so here and date it.</p>
+  </div>
+</section>
+
+<section class="close-band" data-nav-dark>
+  <div class="close-band__inner" style="padding-top:0;padding-bottom:0">
+    <footer class="site-foot" style="border-top:0">
+      <div>
+        <strong>Surface Talent</strong>
+        <span>Sister business of EMC Surface Technologies</span>
+      </div>
+      <nav class="site-foot__nav" aria-label="Footer">
+        <a href="clients.html">Clients</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="site-foot__legal">
+        <span>&copy; Surface Talent</span>
+      </div>
+      <div class="site-foot__fine">
+        <nav class="site-foot__fine-nav" aria-label="Legal and policies">
+          <a href="privacy.html">Privacy</a>
+          <a href="candidate-privacy.html">Candidate privacy</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="responsible-ai.html">Responsible AI</a>
+          <a href="modern-slavery.html">Modern slavery</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy-requests.html">Privacy requests</a>
+          <a href="accessibility.html">Accessibility</a>
+        </nav>
+        <p class="site-foot__corp">Surface Talent &mdash; UK company registration in progress. Company number: [COMPANY NUMBER]. Correspondence address: 67C King Street, Knutsford, Cheshire WA16 6DX.</p>
+      </div>
+    </footer>
+  </div>
+</section>
+<script type="module" src="assets/site.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 Internal source of truth for material public claims.
 **Rule:** no public claim without evidence. Soften or remove when evidence is missing.
-Last reviewed: 2026-08-10.
+Last reviewed: 2026-08-20.
 
 | Status | Meaning |
 |--------|---------|
@@ -166,3 +166,51 @@ Do not alter quote wording for drama.
 5. Exact IMF / SEA relationship (member / participant / none)
 6. Any anonymised retained-search outcomes safe to publish
 7. Commercial definition of replacement/rebate / 90-day follow-up if stronger language desired
+
+---
+
+## Candidate response time
+
+| Field | Value |
+|-------|-------|
+| Claim (old) | "We respond within 24 hours" (candidates.html x3, jobs.html x1) |
+| Evidence | None. No published SLA, no staffed support rota, no measured response data. Not previously recorded in this ledger |
+| Approved wording | "We usually reply within one working day." |
+| Public use | QUALIFY — hedged practice statement only. Do not restore an unqualified hours-based guarantee without a real, measured commitment |
+| Status | Softened 2026-08-20 during the website compliance pass |
+
+---
+
+## AI-assisted assessment (public description)
+
+| Field | Value |
+|-------|-------|
+| Claim | Surface Talent uses AI-assisted tools to structure role requirements and assess job-relevant evidence, supporting rather than replacing recruiter judgement |
+| Evidence | Product behaviour in the Surface Talent application: weighted role requirements, evidence-linked fit indicators with coverage and confidence, reason-coded negative evidence, framework-version pinning, explicit recruiter-triggered scoring, interview evidence analysis |
+| Approved wording | See `responsible-ai.html` and `candidate-privacy.html` section 5. No certification, accreditation or audit may be claimed. Bias-free operation must never be claimed |
+| Public use | APPROVED as capability and safeguard description |
+| Status | Published 2026-08-20. Keep aligned with the product; re-verify before claiming any new capability |
+
+---
+
+## Modern slavery statement status
+
+| Field | Value |
+|-------|-------|
+| Claim (old) | Statement "pursuant to the principles of section 54 of the Modern Slavery Act 2015", board-approved, with staff training and 12-week candidate follow-up |
+| Evidence | Section 54 applies at £36m annual turnover (GOV.UK) — not met. No board exists. No documented training programme. No placement history supporting a 12-week follow-up control |
+| Approved wording | Voluntary "Modern slavery and ethical recruitment" policy that states plainly it is not a section 54 statement, plus an explicit "what we do not yet have in place" section |
+| Public use | APPROVED as voluntary policy only |
+| Status | Reframed 2026-08-20. Do not re-badge as a statutory statement unless turnover threshold and board approval are both genuinely met |
+
+---
+
+## Website analytics
+
+| Field | Value |
+|-------|-------|
+| Claim (old) | privacy.html and cookies.html documented Google Analytics (GA4) and Microsoft Clarity, including named cookies and retention periods |
+| Evidence | No analytics, session-recording or tag-manager code exists anywhere in the website source. The site sets no cookies. Verified by source audit 2026-08-20 |
+| Approved wording | "This website sets no cookies and carries no analytics, session recording or advertising tracking." |
+| Public use | APPROVED — accurate as built |
+| Status | Corrected 2026-08-20. If analytics is ever added, update `cookies.html` **before** deploying it, and gate anything non-essential behind consent |

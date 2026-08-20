@@ -141,3 +141,54 @@ h1, h2, h3, h4, p { margin: 0; }
   left: 0.75rem;
   top: 0.75rem;
 }
+
+/* ── Footer fine print (legal links + corporate disclosure) ──
+   Shared by the site-wide footer (site.css) and the landing
+   close band (landing.css); both sit on dark backgrounds. */
+.site-foot__fine,
+.close__fine {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid color-mix(in srgb, var(--chalk) 12%, transparent);
+}
+
+.site-foot__fine-nav,
+.close__fine-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.9rem;
+}
+
+.site-foot__fine-nav a,
+.close__fine-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.35rem 0.1rem;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--chalk) 62%, transparent);
+}
+
+.site-foot__fine-nav a:hover,
+.site-foot__fine-nav a:focus-visible,
+.close__fine-nav a:hover,
+.close__fine-nav a:focus-visible { color: var(--copper); }
+
+.site-foot__corp,
+.close__corp {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 0.74rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--chalk) 45%, transparent);
+}
+
+/* Light-background variant (e.g. 404) */
+.site-foot__fine--light { border-top-color: #e4e4e4; }
+.site-foot__fine--light .site-foot__fine-nav a,
+.site-foot__fine--light .site-foot__corp { color: var(--steel); }
+.site-foot__fine--light .site-foot__fine-nav a:hover,
+.site-foot__fine--light .site-foot__fine-nav a:focus-visible { color: var(--copper); }

@@ -14,6 +14,17 @@ Canonical site: https://surfacetalent.co.uk/
 - [About](https://surfacetalent.co.uk/about): Provenance — sister business of the EMC Surface Technologies group
 - [Contact](https://surfacetalent.co.uk/contact): Brief a role or confidential conversation
 
+## Trust and legal
+
+- [Candidate privacy notice](https://surfacetalent.co.uk/candidate-privacy): What candidate information we hold, where it comes from, how AI-assisted assessment works, and candidate rights
+- [Fair recruitment and responsible AI](https://surfacetalent.co.uk/responsible-ai): What our AI-assisted assessment does and does not do, and the safeguards
+- [Privacy policy](https://surfacetalent.co.uk/privacy): Clients, suppliers and website visitors
+- [Cookie policy](https://surfacetalent.co.uk/cookies): This site sets no cookies and carries no analytics or tracking
+- [Modern slavery and ethical recruitment](https://surfacetalent.co.uk/modern-slavery): Voluntary policy; candidates never pay a fee to find work
+- [Privacy requests](https://surfacetalent.co.uk/privacy-requests): How to access, correct or delete your information
+- [Terms of website use](https://surfacetalent.co.uk/terms)
+- [Accessibility statement](https://surfacetalent.co.uk/accessibility)
+
 ## Contact
 
 - Email: hello@surfacetalent.co.uk
