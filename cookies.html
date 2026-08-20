@@ -25,7 +25,11 @@
   .legal-body .callout{border-left:3px solid var(--copper);padding:.85rem 0 .85rem 1rem;margin:1.5rem 0;background:#faf8f6}
   .legal-body .callout p{margin:0}
   .cookie-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
-  .cookie-table th,.cookie-table td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid #e4e4e4;vertical-align:top;overflow-wrap:anywhere}
+  .cookie-table th,.cookie-table td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid #e4e4e4;vertical-align:top}
+  /* Only the hostname column may break mid-token; blanket overflow-wrap shredded
+     the "Sets cookies?" header one letter per line at 375px. */
+  .cookie-table td:first-child{overflow-wrap:anywhere}
+  .cookie-table th:last-child,.cookie-table td:last-child{white-space:nowrap}
   .cookie-table th{font-weight:600;color:#1c1f22}
 </style>
 </head>
